@@ -1,0 +1,25 @@
+{
+  "name": "chiralium",
+  "version": "0.1.0",
+  "description": "A simple ORM for Cloudflare Workers and various Cloudflare datastores.",
+  "author": "Isaac Shea <isaac_shea@icloud.com>",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20240423.0"
+  }
+}

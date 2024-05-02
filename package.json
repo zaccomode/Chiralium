@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "workspaces/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^7.3.1"
+  },
+  "scripts": {
+    "build-package": "npm run build -w workspaces/package"
+  }
+}
