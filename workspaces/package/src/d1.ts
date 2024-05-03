@@ -161,7 +161,7 @@ export namespace D1 {
           if (!result.hasOwnProperty(column)) throw new Error(`Failed to find column ${column} in the result`);
         });
 
-        return Serialisable.fromJson(result);
+        return Serialisable.parse(result);
 
       } catch (e) {
         throw new Error(`Failed to refresh object ${this.id} from D1: ${e}`);
@@ -173,8 +173,8 @@ export namespace D1 {
     /** Converts an Obstructed JSON object to its original class
      * @param json The JSON object to convert
      */
-    static fromJson = function (json: any): any {
-      throw new Error("fromJson is not implemented!");
+    static parse(json: any): any {
+      throw new Error("parse is not implemented!");
     }
   }
 }
