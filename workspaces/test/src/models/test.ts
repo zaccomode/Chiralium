@@ -43,4 +43,18 @@ export class MyClass extends D1.Serialisable<MyClass> {
       throw new Error(`Failed to parse JSON into MyClass: ${e}`);
     }
   };
+
+
+  static async find(DB: D1Database, id: string): Promise<MyClass | undefined> { 
+    try { 
+      const query = `SELECT * FROM ${MyClass.tableName} WHERE id = ?`;
+      const result = await DB.prepare(query)
+        .bind(id)
+        .first();
+      if (!result) return undefined;
+      return MyClass.parse(result);
+    } catch (e) { 
+      throw new Error(`Failed to find object ${id} in MyClass: ${e}`);
+    }
+  }
 }
